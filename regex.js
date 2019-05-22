@@ -1,3 +1,5 @@
+
+// checking a one char pattern and a one char text
 function matchOne(pattern, text) {
     if (!pattern) return true // empty pattern is true
     if (!text) return false // non-empty pattern and empty text is false
@@ -9,11 +11,15 @@ function search(pattern, text) {
 
 }
 
+
 function match(pattern, text) {
+    if (pattern === '') return true // base case for recursion: when the pattern is empty every text fits it
+
+    else return matchOne(pattern[0], text[0]) && match(pattern.slice(1), text.slice[1])
 }
 
 
-module.exports = {
+export default {
   matchOne,
   match,
   search
